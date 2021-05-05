@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import MainOption from "../components/MainOption.js";
 
@@ -6,7 +6,9 @@ const MainScreen = (props) => {
   const playPressed = () => {
     props.navigation.navigate("Question");
   };
-  const addPressed = () => {};
+  const addPressed = () => {
+    props.navigation.navigate("Form");
+  };
 
   return (
     <View style={styles.container}>
