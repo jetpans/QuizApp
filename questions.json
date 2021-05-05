@@ -1,0 +1,34 @@
+[
+  {
+    "question": "How many necks does giraffe have?",
+    "answer1": "1",
+    "answer2": "12",
+    "answer3": "133",
+    "answer4": "1444",
+    "correct": "1"
+  },
+  {
+    "question": "How many cars?",
+    "answer1": "1",
+    "answer2": "Monkey",
+    "answer3": "Eigth",
+    "answer4": "1444",
+    "correct": "2"
+  },
+  {
+    "question": "How many nLASMFAS does giraffe have?",
+    "answer1": "1",
+    "answer2": "12",
+    "answer3": "133",
+    "answer4": "Schwa",
+    "correct": "3"
+  },
+  {
+    "question": "HIBUYPOWERaffe have?",
+    "answer1": "1",
+    "answer2": "12",
+    "answer3": "THROW",
+    "answer4": "1444",
+    "correct": "4"
+  }
+]
