@@ -9,7 +9,7 @@ const changeColorReducer = (colors, action) => {
   switch (action.type) {
     case "rightColors":
       let tempColors = ["red", "red", "red", "red"];
-      tempColors[Number(action.correct) - 1] = "green";
+      tempColors[Number(action.correct)] = "green";
       return tempColors;
 
     case "resetColors":
@@ -40,16 +40,13 @@ const QuestionScreen = (props) => {
     let index = Math.floor(Object.keys(Questions).length * Math.random());
     let theQuestion = Questions[index];
     dispatchColors({ type: "resetColors" });
-    setCorrect(Number(theQuestion.correct));
+    let tempAns = theQuestion.answers.sort(() => Math.random() - 0.5);
+    let tempCor = tempAns.indexOf(theQuestion.correct);
+    setCorrect(tempCor);
     setQuestion(theQuestion.question);
     dispatchAnswers({
       type: "updateAnswers",
-      list: [
-        theQuestion.answer1,
-        theQuestion.answer2,
-        theQuestion.answer3,
-        theQuestion.answer4,
-      ],
+      list: tempAns,
     });
     setTouchable(false);
   };
@@ -60,7 +57,7 @@ const QuestionScreen = (props) => {
 
   const handleClickOn = (input) => {
     setTouchable(true);
-    if (Number(input) === Number(correct)) {
+    if (Number(input) === Number(correct) + 1) {
       setScore(score + 1);
     }
     dispatchColors({ type: "rightColors", correct: correct });
